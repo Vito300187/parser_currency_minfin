@@ -3,7 +3,7 @@ import requests as req
 import ipdb as pry
 import sys
 
-currency = input('Какой код валюты показать ? \n').upper().strip()
+currency = input('What currency code should I show ? \n').upper().strip()
 if len(currency) is 0:
     sys.exit('Sorry, currency code not input')
 
@@ -22,6 +22,6 @@ for i in tr[1:]:
     currency_code = currency_title[1]
     float_value = float(currency_title[-1].replace(',', '.'))
     hash_currency[currency_code] = round(float_value, 2)
-    # print(currency_code, round(float_value, 2))
+    # print(currency_code, round(float_value, 2)) # show list all currency value
 
-print('Значение валюты', hash_currency[currency])
+print('Currency value', currency, '-', hash_currency[currency])
